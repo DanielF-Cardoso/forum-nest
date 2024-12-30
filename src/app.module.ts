@@ -4,7 +4,7 @@ import { ConfigModule } from '@nestjs/config'
 import { CreateAccountController } from './controllers/create-account.controller'
 import { envSchema } from './envt'
 import { AuthModule } from './auth/auth.module'
-import { AuthenticateController } from './controllers/authenticate-controller'
+import { AuthenticateController } from './controllers/authenticate.controller'
 
 @Module({
   imports: [

@@ -3,6 +3,7 @@ import { ConfigService } from '@nestjs/config'
 import { JwtModule } from '@nestjs/jwt'
 import { PassportModule } from '@nestjs/passport'
 import { Env } from 'src/envt'
+import { JwtStrategy } from './jwt.strategy'
 
 @Module({
   imports: [
@@ -22,5 +23,6 @@ import { Env } from 'src/envt'
       },
     }),
   ],
+  providers: [JwtStrategy],
 })
 export class AuthModule {}
