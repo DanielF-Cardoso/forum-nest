@@ -9,10 +9,12 @@ import { PrismaAnswerAttachmentsRepository } from './repositories/prisma-answer-
 import { QuestionsRepository } from '@/domain/forum/application/repositories/questions-repository'
 import { StudentsRepository } from '@/domain/forum/application/repositories/students-repository'
 import { PrismaStudentsRepository } from './repositories/prisma-students-repository'
+import { PrismaClient } from '@prisma/client'
 
 @Module({
   providers: [
     PrismaService,
+    PrismaClient,
     {
       provide: QuestionsRepository,
       useClass: PrismaQuestionsRepository,
