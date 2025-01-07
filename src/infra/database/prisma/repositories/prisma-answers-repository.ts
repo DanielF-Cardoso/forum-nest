@@ -43,7 +43,7 @@ export class PrismaAnswerRepository implements AnswerRepository {
 
   async save(answer: Answer): Promise<void> {
     const data = PrismaAnswerMapper.toPersistence(answer)
-    await this.prisma.question.update({
+    await this.prisma.answer.update({
       where: {
         id: data.id,
       },
