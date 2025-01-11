@@ -69,6 +69,13 @@ export class EditQuestionUseCase {
 
     await this.questionsRepository.save(question)
 
+    await this.questionsAttachmentsRepository.deleteMany(
+      questionAttachmentList.getRemovedItems(),
+    )
+    await this.questionsAttachmentsRepository.createMany(
+      questionAttachmentList.getNewItems(),
+    )
+
     return right({
       question,
     })

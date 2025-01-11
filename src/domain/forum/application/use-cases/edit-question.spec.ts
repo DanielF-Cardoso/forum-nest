@@ -102,6 +102,10 @@ describe('Edit Question', () => {
         questionId: newQuestion.id,
         attachmentId: new UniqueEntityID('2'),
       }),
+      makeQuestionAttachment({
+        questionId: newQuestion.id,
+        attachmentId: new UniqueEntityID('3'),
+      }),
     )
 
     const result = await sut.execute({
@@ -112,7 +116,15 @@ describe('Edit Question', () => {
       attachmentsIds: ['1', '3'],
     })
 
+    console.log(inMemoryQuestionAttachmentRepository.items)
+
     expect(result.isRight()).toBeTruthy()
     expect(inMemoryQuestionAttachmentRepository.items).toHaveLength(2)
+    expect(inMemoryQuestionAttachmentRepository.items).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({ attachmentId: new UniqueEntityID('1') }),
+        expect.objectContaining({ attachmentId: new UniqueEntityID('3') }),
+      ]),
+    )
   })
 })
