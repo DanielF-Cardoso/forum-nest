@@ -116,8 +116,6 @@ describe('Edit Question', () => {
       attachmentsIds: ['1', '3'],
     })
 
-    console.log(inMemoryQuestionAttachmentRepository.items)
-
     expect(result.isRight()).toBeTruthy()
     expect(inMemoryQuestionAttachmentRepository.items).toHaveLength(2)
     expect(inMemoryQuestionAttachmentRepository.items).toEqual(
