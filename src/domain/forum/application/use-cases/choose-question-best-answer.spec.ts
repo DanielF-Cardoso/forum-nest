@@ -18,7 +18,7 @@ let inMemoryAttachmentsRepository: InMemoryAttachmentsRepository
 let inMemoryStudentsRepository: InMemoryStudentsRepository
 let sut: ChooseQuestionBestAnswerUseCase
 
-describe('Delete Question', () => {
+describe('Choose question best answer', () => {
   beforeEach(() => {
     inMemoryAttachmentsRepository = new InMemoryAttachmentsRepository()
     inMemoryStudentsRepository = new InMemoryStudentsRepository()
