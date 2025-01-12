@@ -41,7 +41,7 @@ export class InMemoryAnswerCommentsRepository
     return answersComments
   }
 
-  async findManyByQuestionIdWithAuthor(
+  async findManyByAnswerIdWithAuthor(
     answerId: string,
     { page }: PaginationParams,
   ) {

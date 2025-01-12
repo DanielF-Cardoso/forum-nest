@@ -9,7 +9,7 @@ export abstract class AnswerCommentsRepository {
     page: PaginationParams,
   ): Promise<AnswerComment[]>
 
-  abstract findManyByQuestionIdWithAuthor(
+  abstract findManyByAnswerIdWithAuthor(
     answerId: string,
     page: PaginationParams,
   ): Promise<CommentWithAuthor[]>
